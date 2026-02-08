@@ -829,6 +829,48 @@ footer {
     overflow-wrap: break-word;
     word-break: normal;
 }
+/* MOBILE NAV FIX */
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    /* Hide nav by default */
+    .nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background: #fff;
+        padding-top: 80px;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    /* Slide in from left */
+    .nav.active {
+        left: 0;
+    }
+
+    /* Stack menu items vertically */
+    .nav ul {
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 20px;
+    }
+}
+/* Desktop */
+.hamburger {
+    display: none;
+}
+
+
 
 
 
