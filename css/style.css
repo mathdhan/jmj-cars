@@ -74,21 +74,26 @@ nav a {
 }
 
 /* MOBILE NAVIGATION */
+/* Mobile navigation panel */
 @media (max-width: 768px) {
-    nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 65px;
-        right: 0;
+    .nav {
+        position: fixed;
+        top: 0;
+        left: -100%; /* start hidden on left */
+        width: 250px;
+        height: 100vh;
         background: #fff;
-        width: 200px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+        padding-top: 80px;
     }
-    nav.active { display: flex; }
-    nav a { padding: 12px; border-bottom: 1px solid #eee; }
-    .hamburger { display: block; }
+
+    .nav.active {
+        left: 0; /* slide in from left */
+    }
 }
+
 
 /* ---------------- HERO ---------------- */
 .hero {
@@ -817,9 +822,13 @@ footer {
         order: 1;
     }
 }
-/* JUSTIFY WELCOME SECTION TEXT */
 .welcome p {
     text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: normal;
 }
+
 
 
