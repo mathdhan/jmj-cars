@@ -74,25 +74,7 @@ nav a {
 }
 
 /* MOBILE NAVIGATION */
-/* Mobile navigation panel */
-@media (max-width: 768px) {
-    .nav {
-        position: fixed;
-        top: 0;
-        left: -100%; /* start hidden on left */
-        width: 250px;
-        height: 100vh;
-        background: #fff;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
-        transition: left 0.3s ease-in-out;
-        z-index: 999;
-        padding-top: 80px;
-    }
 
-    .nav.active {
-        left: 0; /* slide in from left */
-    }
-}
 
 
 /* ---------------- HERO ---------------- */
@@ -829,7 +811,11 @@ footer {
     overflow-wrap: break-word;
     word-break: normal;
 }
-/* MOBILE NAV FIX */
+/* Desktop */
+.hamburger {
+    display: none;
+}
+/* MOBILE NAV – LEFT SLIDE (FIXED) */
 @media (max-width: 768px) {
 
     /* Show hamburger */
@@ -839,9 +825,8 @@ footer {
         cursor: pointer;
     }
 
-    /* Hide nav by default */
-    .nav {
-        display: block;
+    /* Hide desktop nav */
+    nav {
         position: fixed;
         top: 0;
         left: -100%;
@@ -849,26 +834,23 @@ footer {
         height: 100vh;
         background: #fff;
         padding-top: 80px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.15);
         transition: left 0.3s ease-in-out;
         z-index: 999;
+        flex-direction: column;
     }
 
     /* Slide in from left */
-    .nav.active {
+    nav.active {
         left: 0;
     }
 
-    /* Stack menu items vertically */
-    .nav ul {
-        flex-direction: column;
-        gap: 20px;
-        padding-left: 20px;
+    nav a {
+        padding: 12px 20px;
+        display: block;
     }
 }
-/* Desktop */
-.hamburger {
-    display: none;
-}
+
 
 
 
