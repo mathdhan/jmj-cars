@@ -771,3 +771,55 @@ footer {
     border-radius: 4px;
 }
 
+/* LOGO WITH TEXT */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    white-space: nowrap;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .logo img {
+        height: 38px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+}
+
+/* MOVE HAMBURGER TO LEFT ON MOBILE */
+@media (max-width: 768px) {
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        order: -1; /* moves hamburger to the left */
+    }
+
+    .logo {
+        order: 1;
+    }
+}
+/* JUSTIFY WELCOME SECTION TEXT */
+.welcome p {
+    text-align: justify;
+}
+
+
