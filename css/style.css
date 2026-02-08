@@ -74,8 +74,21 @@ nav a {
 }
 
 /* MOBILE NAVIGATION */
-
-
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #fff;
+        width: 200px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    nav.active { display: flex; }
+    nav a { padding: 12px; border-bottom: 1px solid #eee; }
+    .hamburger { display: block; }
+}
 
 /* ---------------- HERO ---------------- */
 .hero {
@@ -757,102 +770,4 @@ footer {
     background: #ccc;
     border-radius: 4px;
 }
-
-/* LOGO WITH TEXT */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img {
-    height: 45px;
-    width: auto;
-}
-
-.logo-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #222;
-    white-space: nowrap;
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .logo img {
-        height: 38px;
-    }
-
-    .logo-text {
-        font-size: 16px;
-    }
-}
-
-/* MOVE HAMBURGER TO LEFT ON MOBILE */
-@media (max-width: 768px) {
-    .site-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .hamburger {
-        order: -1; /* moves hamburger to the left */
-    }
-
-    .logo {
-        order: 1;
-    }
-}
-.welcome p {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    overflow-wrap: break-word;
-    word-break: normal;
-}
-/* Desktop */
-.hamburger {
-    display: none;
-}
-/* MOBILE NAV – LEFT SLIDE (FIXED) */
-@media (max-width: 768px) {
-
-    /* Show hamburger */
-    .hamburger {
-        display: block;
-        font-size: 28px;
-        cursor: pointer;
-    }
-
-    /* Hide desktop nav */
-    nav {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 250px;
-        height: 100vh;
-        background: #fff;
-        padding-top: 80px;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.15);
-        transition: left 0.3s ease-in-out;
-        z-index: 999;
-        flex-direction: column;
-    }
-
-    /* Slide in from left */
-    nav.active {
-        left: 0;
-    }
-
-    nav a {
-        padding: 12px 20px;
-        display: block;
-    }
-}
-
-
-
-
-
 
