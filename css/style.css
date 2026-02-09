@@ -33,7 +33,7 @@ body {
 
 /* ---------------- HEADER ---------------- */
 .site-header {
-    background: #fff;
+    background: #ff0f23;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -49,6 +49,10 @@ body {
     width: auto;
     display: block;
 }
+/* Logo text color for dark navigation */
+.site-header .logo-text {
+    color: #ffffff;
+}
 
 
 .logo {
@@ -63,9 +67,49 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #000;
+    color: #ffffff;
     font-weight: 500;
 }
+
+
+nav a {
+    position: relative;
+    padding: 6px 2px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Underline animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #e60000;
+    transition: width 0.3s ease;
+}
+
+/* Hover */
+nav a:hover {
+    color: #e60000;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Active page (optional but recommended) */
+nav a.active {
+    color: #e60000;
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+
 
 .hamburger {
     display: none;
@@ -74,21 +118,8 @@ nav a {
 }
 
 /* MOBILE NAVIGATION */
-@media (max-width: 768px) {
-    nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 65px;
-        right: 0;
-        background: #fff;
-        width: 200px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    nav.active { display: flex; }
-    nav a { padding: 12px; border-bottom: 1px solid #eee; }
-    .hamburger { display: block; }
-}
+
+
 
 /* ---------------- HERO ---------------- */
 .hero {
@@ -343,6 +374,7 @@ footer {
     padding: 60px 20px;
     background: #f8f8f8;
     text-align: center;
+    backdrop-filter: blur(20px);
 }
 
 .why-choose h2 {
@@ -576,6 +608,65 @@ footer {
         font-size: 16px;
     }
 }
+
+/* CTA WITH OPENING HOURS */
+.cta-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Opening Hours Card */
+.opening-hours {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 25px 22px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+}
+
+.opening-hours h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.opening-hours ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opening-hours li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    font-size: 15px;
+}
+
+.opening-hours li:last-child {
+    border-bottom: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+    .cta-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .opening-hours {
+        margin-top: 30px;
+    }
+
+    .opening-hours li {
+        justify-content: space-between;
+    }
+}
+
 /* WHO WE ARE */
 .who-we-are {
     padding: 60px 20px;
@@ -770,4 +861,164 @@ footer {
     background: #ccc;
     border-radius: 4px;
 }
+
+/* LOGO WITH TEXT */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    white-space: nowrap;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .logo img {
+        height: 38px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+}
+
+/* MOVE HAMBURGER TO LEFT ON MOBILE */
+@media (max-width: 768px) {
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        order: -1; /* moves hamburger to the left */
+    }
+
+    .logo {
+        order: 1;
+    }
+}
+.welcome p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+/* Desktop */
+.hamburger {
+    display: none;
+}
+/* MOBILE NAV – LEFT SLIDE (FIXED) */
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    /* Hide desktop nav */
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background: #fff;
+        padding-top: 80px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+        flex-direction: column;
+    }
+
+    /* Slide in from left */
+    nav.active {
+        left: 0;
+    }
+
+    nav a {
+        padding: 12px 20px;
+        display: block;
+    }
+}
+/* FLOATING WHATSAPP BUTTON */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    z-index: 9999;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Subtle pulse animation */
+@keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+.whatsapp-float {
+    animation: wa-pulse 2.5s infinite;
+}
+/* CARS PAGE SEARCH BAR BACKGROUND */
+.search-bar {
+    background: #f0f6ff;
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+/* Input styling */
+.search-bar input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #c7d8f5;
+    font-size: 15px;
+    outline: none;
+}
+
+/* Focus effect */
+.search-bar input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+
+
+
+
+
+
 
