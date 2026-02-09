@@ -3,7 +3,7 @@ const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("nav");
 
 hamburger.addEventListener("click", () => {
-    nav.classList.toggle("active");
+    nav.classList.toggle("hidden");
 });
 
 // Sticky header on scroll
@@ -15,3 +15,4 @@ window.addEventListener("scroll", () => {
         header.classList.remove("sticky");
     }
 });
+
