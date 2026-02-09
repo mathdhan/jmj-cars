@@ -935,7 +935,7 @@ footer {
         top: 0;
         left: -100%;
         width: 250px;
-        height: 100vh;
+        height: 60vh;
         background: #fff;
         padding-top: 80px;
         box-shadow: 2px 0 10px rgba(0,0,0,0.15);
@@ -1021,6 +1021,7 @@ footer {
     border-color: #4a90e2;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
+
 
 
 
