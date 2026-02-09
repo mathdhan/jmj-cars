@@ -2,19 +2,9 @@
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("nav");
 
-// Toggle menu on hamburger click
 hamburger.addEventListener("click", () => {
     nav.classList.toggle("active");
 });
-
-// Close menu when any nav link is clicked
-const navLinks = document.querySelectorAll("nav a");
-
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("active"); // Close the menu
-    });
-
 
 // Sticky header on scroll
 const header = document.querySelector(".site-header");
@@ -25,6 +15,3 @@ window.addEventListener("scroll", () => {
         header.classList.remove("sticky");
     }
 });
-
-
-
