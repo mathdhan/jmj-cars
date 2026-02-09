@@ -949,11 +949,18 @@ footer {
         left: 0;
     }
 
-    nav a {
+ nav a {
+        color: #111; /* dark color so visible on white background */
         padding: 12px 20px;
         display: block;
+        font-weight: 500;
+    }
+
+    nav a:hover {
+        color: #e60000;
     }
 }
+
 /* FLOATING WHATSAPP BUTTON */
 .whatsapp-float {
     position: fixed;
@@ -1014,6 +1021,7 @@ footer {
     border-color: #4a90e2;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
+
 
 
 
