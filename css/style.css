@@ -946,36 +946,51 @@ footer {
     }
 
     /* Hide desktop nav */
-    nav {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 250px;
-        height: calc(100vh - 80px);
+@media (max-width: 768px) {
+
+    .nav {
+        position: absolute;
+        top: 70px;               /* opens below header */
+        left: 10px;
+        width: 220px;
+        height: auto;            /* ✅ NOT full screen */
         background: #fff;
-        padding-top: 80px;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.15);
-        transition: left 0.3s ease-in-out;
+        border-radius: 12px;
+        padding: 15px 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        transform: translateX(-120%);
+        transition: transform 0.3s ease;
         z-index: 999;
+    }
+
+    .nav.active {
+        transform: translateX(0);
+    }
+
+    .nav ul {
+        display: flex;
         flex-direction: column;
+        gap: 5px;
+        padding: 0;
+        margin: 0;
     }
 
-    /* Slide in from left */
-    nav.active {
-        left: 0;
-    }
-
- nav a {
-        color: #111; /* dark color so visible on white background */
+    .nav a {
         padding: 12px 20px;
         display: block;
+        font-size: 16px;
         font-weight: 500;
+        color: #222;
+        border-radius: 6px;
+        transition: background 0.25s, color 0.25s;
     }
 
-    nav a:hover {
+    .nav a:hover {
+        background: #f2f2f2;
         color: #e60000;
     }
 }
+
 
 /* FLOATING WHATSAPP BUTTON */
 .whatsapp-float {
@@ -1073,6 +1088,7 @@ footer {
         display: block;
     }
 }
+
 
 
 
