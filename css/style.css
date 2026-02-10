@@ -1039,6 +1039,25 @@ footer {
         display: block;
     }
 }
+/* Close icon inside mobile menu */
+.close-menu {
+    display: none;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Show close icon only on mobile */
+@media (max-width: 768px) {
+    .close-menu {
+        display: block;
+    }
+}
+
 
 
 
