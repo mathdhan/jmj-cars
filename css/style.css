@@ -1157,18 +1157,92 @@ footer {
         display: block;
     }
 }
-/* ================= DESKTOP NAV – FORCE HORIZONTAL ================= */
-nav ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+/* ================= NAV FIX – DESKTOP vs MOBILE ================= */
+
+/* ---------- DESKTOP NAV ---------- */
+@media (min-width: 769px) {
+    nav {
+        display: flex !important;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        display: inline-flex;
+        align-items: center;
+        color: #fff;
+    }
+
+    /* Hide icons on desktop */
+    nav a i {
+        display: none;
+    }
+
+    .close-menu {
+        display: none !important;
+    }
 }
 
-nav a {
-    display: inline-flex;
-    align-items: center;
+/* ---------- MOBILE NAV ---------- */
+@media (max-width: 768px) {
+
+    nav {
+        display: none !important;
+    }
+
+    nav.active {
+        display: block !important;
+        position: absolute;
+        top: 70px;
+        left: 10px;
+        width: 230px;
+        padding: 14px 0;
+
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        border-radius: 14px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        z-index: 9999;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 20px;
+        color: #222 !important;
+    }
+
+    nav a i {
+        font-size: 18px;
+        color: #e60000;
+    }
 }
+
+
 
 
 
