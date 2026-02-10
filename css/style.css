@@ -1055,6 +1055,31 @@ footer {
     }
 }
 
+/* ================= MOBILE NAV ICONS ================= */
+@media (max-width: 768px) {
+
+    nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    nav a i {
+        font-size: 18px;
+        color: #e60000;
+        min-width: 20px;
+        text-align: center;
+    }
+
+    nav a:hover i {
+        color: #c40000;
+    }
+
+    nav a.active i {
+        color: #e60000;
+    }
+}
+
 
 /* FLOATING WHATSAPP BUTTON */
 .whatsapp-float {
@@ -1132,6 +1157,7 @@ footer {
         display: block;
     }
 }
+
 
 
 
