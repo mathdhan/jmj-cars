@@ -1089,6 +1089,77 @@ footer {
     }
 }
 
+    /* ================= MOBILE NAV FINAL FIX ================= */
+@media (max-width: 768px) {
+
+    /* Hide desktop nav */
+    nav {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    /* Mobile menu container */
+    nav.active {
+        display: block;
+        position: absolute;
+        top: 70px;              /* below header */
+        left: 10px;
+        width: 220px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 15px 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+
+    /* Stack menu items */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav a {
+        padding: 12px 20px;
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: #222;
+        border-radius: 6px;
+        transition: background 0.25s, color 0.25s;
+    }
+
+    nav a:hover {
+        background: #f2f2f2;
+        color: #e60000;
+    }
+
+    /* Close button hidden by default */
+    .close-menu {
+        display: none;
+    }
+
+    /* Show close button only inside mobile menu */
+    nav.active .close-menu {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+}
+
+
+
 
 
 
