@@ -1157,6 +1157,19 @@ footer {
         display: block;
     }
 }
+/* ================= DESKTOP NAV – FORCE HORIZONTAL ================= */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+}
+
 
 
 
