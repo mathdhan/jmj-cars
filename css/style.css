@@ -936,46 +936,73 @@ footer {
     display: none;
 }
 /* MOBILE NAV – LEFT SLIDE (FIXED) */
+/* ================= MOBILE NAV – FINAL CLEAN FIX ================= */
 @media (max-width: 768px) {
+
+    /* Hide desktop nav */
+    nav {
+        display: none;
+    }
 
     /* Show hamburger */
     .hamburger {
         display: block;
-        font-size: 28px;
-        cursor: pointer;
     }
 
-    /* Hide desktop nav */
-    nav {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 250px;
-        height: calc(100vh - 80px);
-        background: #fff;
-        padding-top: 80px;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.15);
-        transition: left 0.3s ease-in-out;
-        z-index: 999;
-        flex-direction: column;
-    }
-
-    /* Slide in from left */
+    /* Mobile menu container */
     nav.active {
-        left: 0;
+        display: block;
+        position: absolute;
+        top: 70px;           /* opens below header */
+        left: 10px;
+        width: 220px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 15px 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 999;
     }
 
- nav a {
-        color: #111; /* dark color so visible on white background */
+    /* Menu list */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    nav a {
         padding: 12px 20px;
         display: block;
-        font-weight: 500;
+        font-size: 16px;
+        color: #222;
+        border-radius: 6px;
     }
 
     nav a:hover {
+        background: #f2f2f2;
         color: #e60000;
     }
+
+    /* Close button */
+    .close-menu {
+        display: none;
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #333;
+    }
+
+    nav.active .close-menu {
+        display: block;
+    }
 }
+
 
 /* FLOATING WHATSAPP BUTTON */
 .whatsapp-float {
@@ -1037,17 +1064,7 @@ footer {
     border-color: #4a90e2;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
-/* Close icon inside mobile menu */
-.close-menu {
-    display: none;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    color: #333;
-}
+
 
 /* Show close icon only on mobile */
 @media (max-width: 768px) {
@@ -1055,17 +1072,7 @@ footer {
         display: block;
     }
 }
-/* Close icon inside mobile menu */
-.close-menu {
-    display: none;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    color: #333;
-}
+
 
 /* Show close icon only on mobile */
 @media (max-width: 768px) {
@@ -1073,6 +1080,7 @@ footer {
         display: block;
     }
 }
+
 
 
 
