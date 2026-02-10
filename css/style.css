@@ -1021,6 +1021,26 @@ footer {
     border-color: #4a90e2;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
+/* Close icon inside mobile menu */
+.close-menu {
+    display: none;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Show close icon only on mobile */
+@media (max-width: 768px) {
+    .close-menu {
+        display: block;
+    }
+}
+
+
 
 
 
