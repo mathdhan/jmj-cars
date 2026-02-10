@@ -23,3 +23,30 @@ window.addEventListener("scroll", () => {
     }
 });
 
+const hamburger = document.querySelector(".hamburger");
+const nav = document.querySelector("nav");
+const closeMenu = document.querySelector(".close-menu");
+
+/* Toggle menu */
+hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+/* Close via ✕ icon */
+closeMenu.addEventListener("click", () => {
+    nav.classList.remove("active");
+});
+
+/* Close when clicking outside */
+document.addEventListener("click", (e) => {
+    if (
+        nav.classList.contains("active") &&
+        !nav.contains(e.target) &&
+        !hamburger.contains(e.target)
+    ) {
+        nav.classList.remove("active");
+    }
+});
+
+
+
