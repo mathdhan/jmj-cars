@@ -909,12 +909,22 @@ footer {
     }
 }
 .welcome p {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
+    max-width: 900px;              /* controls text width */
+    margin: 0 auto;                /* centers the paragraph */
+    text-align: justify;           /* justify text */
+    text-align-last: left;         /* prevents stretched last line */
+    line-height: 1.9;              /* clean, readable line gap */
+    font-size: 16px;
+    color: #555;
+
+    hyphens: auto;                 /* smooth word breaking */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+
     overflow-wrap: break-word;
     word-break: normal;
 }
+
 /* Desktop */
 .hamburger {
     display: none;
@@ -1057,6 +1067,7 @@ footer {
         display: block;
     }
 }
+
 
 
 
