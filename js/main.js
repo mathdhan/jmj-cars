@@ -54,10 +54,19 @@ window.addEventListener("scroll", () => {
 });
 // Auto highlight active navigation link
 document.addEventListener("DOMContentLoaded", () => {
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
     const navLinks = document.querySelectorAll("nav a");
 
+    // Get current file name
+    let currentPage = window.location.pathname.split("/").pop();
+
+    // Treat empty path as index.html
+    if (currentPage === "") {
+        currentPage = "index.html";
+    }
+
     navLinks.forEach(link => {
+        link.classList.remove("active"); // safety reset
+
         const linkPage = link.getAttribute("href");
 
         if (linkPage === currentPage) {
@@ -65,5 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
 
 
