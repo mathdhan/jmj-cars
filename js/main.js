@@ -76,3 +76,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+const priceFilterBtn = document.getElementById("priceFilterBtn");
+
+if (priceFilterBtn) {
+    priceFilterBtn.addEventListener("click", () => {
+        const min = parseInt(document.getElementById("minPrice").value) || 0;
+        const max = parseInt(document.getElementById("maxPrice").value) || Infinity;
+
+        const cars = document.querySelectorAll(".car");
+
+        cars.forEach(car => {
+            const priceElement = car.querySelector(".price");
+
+            if (!priceElement) return;
+
+            // Remove £ and commas properly
+            const price = parseInt(
+                priceElement.innerText
+                    .replace("£", "")
+                    .replace(/,/g, "")
+                    .trim()
+            );
+
+            if (price >= min && price <= max) {
+                car.style.display = "";
+            } else {
+                car.style.display = "none";
+            }
+        });
+    });
+}
+
