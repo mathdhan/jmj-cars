@@ -931,6 +931,7 @@ footer {
 }
 /* Welcome Sub Heading */
 /* Welcome Sub Heading – FORCE STYLE */
+/* Welcome Sub Heading – Premium Look */
 .welcome .welcome-sub {
     display: block;
     text-align: center !important;
@@ -938,7 +939,10 @@ footer {
     font-weight: 600;
     color: #e60000 !important;
     margin: 10px auto 20px;
-    
+
+    /* Subtle premium depth */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
     opacity: 0;
     transform: translateY(20px);
     animation: fadeSlideUp 1s ease forwards;
@@ -1265,6 +1269,7 @@ footer {
         color: #e60000;
     }
 }
+
 
 
 
