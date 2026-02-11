@@ -930,17 +930,21 @@ footer {
     margin-bottom: 25px;
 }
 /* Welcome Sub Heading */
-.welcome-sub {
-    text-align: center;
+/* Welcome Sub Heading – FORCE STYLE */
+.welcome .welcome-sub {
+    display: block;
+    text-align: center !important;
     font-size: 20px;
-    font-weight: 500;
-    color: #e60000;
-    margin-bottom: 20px;
+    font-weight: 600;
+    color: #e60000 !important;
+    margin: 10px auto 20px;
+    
     opacity: 0;
     transform: translateY(20px);
     animation: fadeSlideUp 1s ease forwards;
     animation-delay: 0.4s;
 }
+
 
 /* Animation */
 @keyframes fadeSlideUp {
@@ -1261,6 +1265,7 @@ footer {
         color: #e60000;
     }
 }
+
 
 
 
