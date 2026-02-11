@@ -362,6 +362,12 @@ footer {
     text-decoration: underline;
 }
 
+.map-heading {
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .contact-cards {
@@ -1352,6 +1358,7 @@ footer {
     line-height: 1.8;
     margin-bottom: 15px;
 }
+
 
 
 
