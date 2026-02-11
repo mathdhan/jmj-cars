@@ -109,6 +109,13 @@ nav a.active::after {
     width: 100%;
 }
 
+/* Active Navigation Link */
+nav ul li a.active {
+    background-color: #2ecc71; /* Green */
+    color: #ffffff !important;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
 
 
 .hamburger {
@@ -1401,6 +1408,7 @@ footer {
 .price-inputs button:hover {
     background: #c40000;
 }
+
 
 
 
