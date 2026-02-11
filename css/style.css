@@ -1284,6 +1284,52 @@ footer {
     }
 }
 
+/* CALL NOW SECTION */
+.call-now {
+    background: linear-gradient(135deg, #111, #222);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.call-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.call-now h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.call-now p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.call-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #e60000;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.call-btn i {
+    margin-right: 8px;
+}
+
+.call-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
 
 
 
