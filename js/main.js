@@ -77,33 +77,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 const priceFilterBtn = document.getElementById("priceFilterBtn");
+const minInput = document.getElementById("minPrice");
+const maxInput = document.getElementById("maxPrice");
+const cars = document.querySelectorAll(".car");
 
-if (priceFilterBtn) {
-    priceFilterBtn.addEventListener("click", () => {
-        const min = parseInt(document.getElementById("minPrice").value) || 0;
-        const max = parseInt(document.getElementById("maxPrice").value) || Infinity;
+function filterCars() {
+    const min = parseInt(minInput.value) || 0;
+    const max = parseInt(maxInput.value) || Infinity;
 
-        const cars = document.querySelectorAll(".car");
+    cars.forEach(car => {
+        const priceElement = car.querySelector(".price");
+        if (!priceElement) return;
 
-        cars.forEach(car => {
-            const priceElement = car.querySelector(".price");
+        const price = parseInt(
+            priceElement.innerText
+                .replace("£", "")
+                .replace(/,/g, "")
+                .trim()
+        );
 
-            if (!priceElement) return;
-
-            // Remove £ and commas properly
-            const price = parseInt(
-                priceElement.innerText
-                    .replace("£", "")
-                    .replace(/,/g, "")
-                    .trim()
-            );
-
-            if (price >= min && price <= max) {
-                car.style.display = "";
-            } else {
-                car.style.display = "none";
-            }
-        });
+        if (price >= min && price <= max) {
+            car.style.display = "";
+        } else {
+            car.style.display = "none";
+        }
     });
 }
+
+// Filter on button click
+if (priceFilterBtn) {
+    priceFilterBtn.addEventListener("click", filterCars);
+}
+
+// Filter automatically when min or max input is cleared or changed
+[minInput, maxInput].forEach(input => {
+    input.addEventListener("input", () => {
+        // If both inputs are empty, show all cars
+        if (!minInput.value && !maxInput.value) {
+            cars.forEach(car => car.style.display = "");
+        } else {
+            filterCars();
+        }
+    });
+});
+
 
