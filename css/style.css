@@ -1358,6 +1358,50 @@ footer {
     line-height: 1.8;
     margin-bottom: 15px;
 }
+/* PRICE FILTER SECTION */
+.price-filter {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.price-filter h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #e60000;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.price-inputs input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 160px;
+    font-size: 14px;
+}
+
+.price-inputs button {
+    padding: 10px 18px;
+    background: #e60000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.price-inputs button:hover {
+    background: #c40000;
+}
+
 
 
 
