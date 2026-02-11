@@ -1329,6 +1329,30 @@ footer {
     transform: scale(1.08);
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
+/* HOW TO REACH US */
+.reach-us {
+    padding: 60px 20px;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+.reach-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.reach-us h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.reach-us p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
 
 
 
