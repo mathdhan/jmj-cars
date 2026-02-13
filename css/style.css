@@ -1408,6 +1408,44 @@ footer {
 .price-inputs button:hover {
     background: #c40000;
 }
+.transmission-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    border-radius: 6px;
+}
+
+/* Manual = blue */
+.transmission-tag.manual {
+    background: #007BFF;
+}
+
+/* Automatic = green */
+.transmission-tag.automatic {
+    background: #28a745;
+}
+
+.car-card {
+    position: relative;
+}
+
+.mileage-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;   /* RIGHT SIDE */
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    z-index: 2;
+}
+
 
 
 
