@@ -1450,6 +1450,24 @@ footer {
     position: relative;
 }
 
+.car.sold {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  position: relative;
+  pointer-events: none;
+}
+
+.sold-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 5;
+}
 
 
 
